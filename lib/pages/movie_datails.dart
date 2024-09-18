@@ -10,7 +10,11 @@ class MovieDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Movie Details"),
+          title: const Text(
+            "Movie Details",
+            style: TextStyle(color: Colors.black87),
+          ),
+          backgroundColor: Colors.blueGrey,
         ),
         body: Container(
           child: Column(

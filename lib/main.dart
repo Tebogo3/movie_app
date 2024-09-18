@@ -4,6 +4,7 @@ import 'package:movie_app/models/movie.dart';
 import 'package:movie_app/pages/movie_datails.dart';
 import 'package:movie_app/providers/movie_provier.dart';
 import 'package:provider/provider.dart';
+import 'dart:js' as js;
 
 void main() {
   runApp(ChangeNotifierProvider(
@@ -17,9 +18,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Movie Listing',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 2, 2, 2)),
         useMaterial3: true,
       ),
       home: const Home(),
@@ -48,7 +51,11 @@ class _HomeState extends State<Home> {
     final movieData = Provider.of<MovieProvider>(context);
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Movie App'),
+          title: const Text(
+            "Movie",
+            style: TextStyle(color: Colors.black87),
+          ),
+          backgroundColor: Colors.blueGrey,
         ),
         body: Center(
           child: ListView.builder(
